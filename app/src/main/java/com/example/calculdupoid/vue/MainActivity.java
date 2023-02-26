@@ -2,6 +2,7 @@ package com.example.calculdupoid.vue;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Valeur entrer incorrect", Toast.LENGTH_SHORT).show();
         }else {
             Toast.makeText(this, "Calculer", Toast.LENGTH_SHORT).show();
+            affichageResult(poid,taille,age,sexe);
 
         }
     }
@@ -79,11 +81,22 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
     private void affichageResult(Integer poid, Integer taille, Integer age, Integer sexe){
-        this.controle.creerProfil(poid, taille, age, sexe);
+        this.controle.creerProfil(age,poid, taille, sexe);
         String message = controle.getMessage();
         float img = controle.getImg();
 
 
+        if (message=="Grosse"){
+            imgSmiley.setImageResource(R.drawable.amoji_graisse);
+        } else if (message=="Normal") {
+            imgSmiley.setImageResource(R.drawable.emoji_yes);
+            lblIMG.setTextColor(Color.GREEN);
+        }else {
+            imgSmiley.setImageResource(R.drawable.emoji_maigre);
+            lblIMG.setTextColor(Color.RED);
+        }
+
+    lblIMG.setText(String.format("%.1f", img)+" : IMG "+message);
     }
 
 

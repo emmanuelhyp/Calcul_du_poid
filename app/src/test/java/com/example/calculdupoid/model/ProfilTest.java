@@ -4,8 +4,8 @@ import junit.framework.TestCase;
 
 public class ProfilTest extends TestCase {
     private Profil profil = new Profil(35,67,165,0);
-    private float Img = (float) 32.2;
-    private String message = "Grosse";
+    private float Img = (float) 32.5;
+    private String message = "Grosses";
 
 
     public void testGetImg() {

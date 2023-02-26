@@ -64,7 +64,7 @@ public class Profil {
         }
 
         message = "Normal";
-        if (Img < max){
+        if (Img < min){
             message = "Maigre";
         }else {
             if (Img>max){
