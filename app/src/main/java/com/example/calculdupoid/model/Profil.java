@@ -1,5 +1,9 @@
 package com.example.calculdupoid.model;
 
+/**
+ * create by Emmanuelhyp on 2023
+ */
+
 public class Profil {
     private static final Integer minFemme = 15; //
     private static final Integer maxFemme = 30;
